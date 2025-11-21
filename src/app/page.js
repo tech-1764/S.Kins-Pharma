@@ -336,6 +336,8 @@ export default function Home() {
                       src={`/assets/products/${idx + 1}.jpg`}
                       alt={product.title}
                       className="w-full h-full object-cover hover:scale-105 transition-all"
+                      width={300}
+                      height={280}
                     />
                   </div>
 
