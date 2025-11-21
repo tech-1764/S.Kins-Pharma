@@ -332,7 +332,7 @@ export default function Home() {
                 <div className="bg-white rounded-2xl border shadow-md hover:shadow-xl transition-all h-[530px] w-[300px] mx-auto flex flex-col">
                   {/* Image Section */}
                   <div className="h-[280px] w-full bg-gray-100 overflow-hidden rounded-t-2xl">
-                    <img
+                    <Image
                       src={`/assets/products/${idx + 1}.jpg`}
                       alt={product.title}
                       className="w-full h-full object-cover hover:scale-105 transition-all"
