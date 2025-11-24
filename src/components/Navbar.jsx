@@ -107,9 +107,11 @@ export default function Navbar() {
                         {/* PRODUCTS & SERVICES Mega Menu */}
 
                         <div className="relative group">
-                            <button className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
+                            <Link
+                                href="/products&services"
+                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
                                 Products & Services
-                            </button>
+                            </Link>
 
                             <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
 
