@@ -333,11 +333,11 @@ export default function Home() {
                   {/* Image Section */}
                   <div className="h-[280px] w-full bg-gray-100 overflow-hidden rounded-t-2xl">
                     <Image
-                      src={`/assets/products/${idx + 1}.jpg`}
+                      src="/assets/about-us.jpg"
                       alt={product.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-all"
-                      width={300}
+                      className="w-full h-full object-cover hover:scale-105 transition-all"               
                       height={280}
+                      width={400}
                     />
                   </div>
 
@@ -368,26 +368,26 @@ export default function Home() {
           </Swiper>
         </div>
         {/* HSN Code Section */}
-        <div className="w-full flex justify-center py-12">
-          <div className="w-[90%] max-w-5xl">
+        {/* <div className="w-full flex justify-center py-12">
+          <div className="w-[90%] max-w-5xl"> */}
             {/* Heading */}
-            <h2 className="text-center text-[#800000] text-3xl font-bold mb-3">
+            {/* <h2 className="text-center text-[#800000] text-3xl font-bold mb-3">
               Deals in HSN Code
-            </h2>
+            </h2> */}
 
             {/* Simple underline (original theme) */}
-            <div className="w-16 h-1 bg-[#800000] mx-auto mb-10"></div>
+            {/* <div className="w-16 h-1 bg-[#800000] mx-auto mb-10"></div> */}
 
             {/* Table Wrapper */}
-            <div className="shadow-xl rounded-md overflow-hidden border">
+            {/* <div className="shadow-xl rounded-md overflow-hidden border"> */}
               {/* Header (NO THEME CHANGE) */}
-              <div className="grid grid-cols-12 bg-[#F9F5F5] font-semibold text-gray-700 py-3 px-4">
+              {/* <div className="grid grid-cols-12 bg-[#F9F5F5] font-semibold text-gray-700 py-3 px-4">
                 <div className="col-span-3">HSN Code</div>
                 <div className="col-span-9">HSN Description</div>
-              </div>
+              </div> */}
 
               {/* Rows (Simple white theme) */}
-              {hsnData.map((item, index) => (
+              {/* {hsnData.map((item, index) => (
                 <div
                   key={index}
                   className="grid grid-cols-12 border-t py-4 px-4"
@@ -397,8 +397,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </section>
       
       {/* Contact Section */}

@@ -1,75 +1,138 @@
-// components/ProductsSection.jsx
-import React from "react";
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const products = [
-  {
-    title: "Junior Chocolate Protein Powder",
-    img: "/products/pro1.png",
-  },
-  {
-    title: "Energy Drink Cum ORS Liquid",
-    img: "/products/pro2.png",
-  },
-  {
-    title: "Chocolate Protein Powder",
-    img: "/products/pro3.png",
-  },
-  {
-    title: "Sr Protein Powder",
-    img: "/products/pro4.png",
-  },
-  {
-    title: "Strawberry Flavour Protein Powder",
-    img: "/products/pro5.png",
-  },
-];
+// ---- IMPORT ALL PRODUCT ARRAYS ----
+import { 
+  proteinProducts,
+  suspensionProducts,
+  syrupProducts,
+  thirdPartyProducts,
+  franchiseProducts,
+  capsulesProducts,
+  sweetenerProducts
+} from "@/data/productsData";
 
-export default function ProductsSection() {
+export default function ProductsServices() {
+  const categories = [
+    {
+      id: "protein-powder",
+      title: "Protein Powder",
+      desc:
+        "Prominent & leading manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder, ORS Liquid, Sr Protein Powder and more.",
+      products: proteinProducts,
+    },
+    {
+      id: "pharma-suspension",
+      title: "Pharmaceutical Suspension",
+      desc:
+        "We offer Lycopene Multivitamins Suspension, Ferrous Ascorbate Suspension, Silymarin Lecithin with L-Ornithine and more.",
+      products: suspensionProducts,
+    },
+    {
+      id: "pharma-syrup",
+      title: "Pharmaceutical Syrup",
+      desc:
+        "Our range includes Fungal Diastase & Pepsin Syrup, Recover-VZ, Digefast Pineapple Flavour and Urocital Syrup.",
+      products: syrupProducts,
+    },
+    {
+      id: "third-party",
+      title: "Third Party Manufacturing",
+      desc:
+        "Bestowed with vast knowledge, we offer prompt and reliable Third Party Pharma Manufacturing services.",
+      products: thirdPartyProducts,
+    },
+    {
+      id: "pcd-franchise",
+      title: "PCD Pharma Franchise",
+      desc:
+        "Emerged as a reputed provider, we render qualitative PCD Pharma Franchise services across India.",
+      products: franchiseProducts,
+    },
+    {
+      id: "capsules",
+      title: "Pharmaceutical Capsules",
+      desc:
+        "Manufacturer of Multivitamin Capsules, Soft Gel Capsules and high-quality pharma capsules.",
+      products: capsulesProducts,
+    },
+    {
+      id: "sweetener",
+      title: "Artificial Sweetener",
+      desc:
+        "We offer high-quality Neo Sucralose Artificial Sweetener.",
+      products: sweetenerProducts,
+    },
+  ];
+
   return (
-<>
+    <>
     <Navbar />
+    <div className="w-full py-9 px-4">
+      <div className="w-full max-w-[1440px] mx-auto space-y-16">
 
-    <div className="w-full bg-[#FFF8F8] py-14 px-6 md:px-20">
-      {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#6E0000]">
-        Protein Powder
-      </h2>
+        <div className="text-center text-left mb-10 px-4 pt-1 md:px-0">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#6E0000] mb-4">
+            Nutraceutical Oral Liquid And Protein Powder
+          </h1>
+          <p className="text-gray-700 text-left max-w-[1440px] mx-auto">
+            Established as a Sole Proprietorship firm in the year 2017, we "S Kins Pharma" are a leading Manufacturer of a wide range of Pharmaceutical Syrup, Pharmaceutical Suspension, Protein Powder, etc.
+          </p>
+        </div>
 
-      {/* Subheading */}
-      <p className="mt-3 text-center text-gray-700 max-w-3xl mx-auto">
-        Prominent & Leading Manufacturer from Nalagarh, we offer Junior Chocolate 
-        Protein Powder, Energy Drink Cum ORS Liquid, Chocolate Protein Powder, Sr 
-        Protein Powder and Strawberry Flavour Protein Powder.
-      </p>
-
-      {/* View More */}
-      <div className="text-center mt-4">
-        <button className="text-[#860000] font-semibold underline hover:text-black">
-          View More
-        </button>
-      </div>
-
-      {/* Products Grid */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        {products.map((p, index) => (
+        {categories.map((cat, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg border hover:shadow-md transition p-4 flex flex-col"
+            className="rounded-2xl shadow-xl border border-[#E8CACA] p-10 bg-[#FFF5F5]"
           >
-            <img
-              src={p.img}
-              alt={p.title}
-              className="w-full h-40 object-contain mx-auto"
-            />
-            <p className="mt-4 text-center font-medium text-gray-800 leading-5">
-              {p.title}
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold text-[#6E0000] text-left">
+              {cat.title}
+            </h2>
+
+            {/* Description */}
+            <p className="mt-3 text-gray-700 max-w-4xl text-left">
+              {cat.desc}
             </p>
+
+            {/* Products Grid */}
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+              {cat.products.map((p, productIndex) => (
+                <div
+                  key={productIndex}
+                  className="bg-white rounded-xl border shadow-sm hover:shadow-lg transition p-4 flex flex-col"
+                >
+                  {/* Image */}
+                  <div className="w-full h-48 flex justify-center items-center">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <p className="mt-4 text-center font-medium text-gray-900 text-[15px] leading-5 px-1">
+                    {p.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* View More */}
+            <div className="flex justify-end mt-8">
+              <Link href={`/products/${cat.id}`}>
+                <button className="bg-[#860000] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#5a0000] transition">
+                  View More
+                </button>
+              </Link>
+            </div>
           </div>
         ))}
+
       </div>
     </div>
 
