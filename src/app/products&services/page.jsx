@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // ---- IMPORT ALL PRODUCT ARRAYS ----
-import { 
+import {
   proteinProducts,
   suspensionProducts,
   syrupProducts,
@@ -14,8 +13,14 @@ import {
   capsulesProducts,
   sweetenerProducts
 } from "@/data/productsData";
+import { useRouter } from "next/navigation";
+import { products } from "@/data/products";
+import { detailedProducts } from "@/data/detailedProducts";
 
 export default function ProductsServices() {
+  const router = useRouter();
+  const proteinProducts = detailedProducts["protein-powder"];
+
   const categories = [
     {
       id: "protein-powder",
@@ -70,73 +75,79 @@ export default function ProductsServices() {
 
   return (
     <>
-    <Navbar />
-    <div className="w-full py-9 px-4">
-      <div className="w-full max-w-[1440px] mx-auto space-y-16">
+      <Navbar />
+      <div className="w-full py-9 px-4">
+        <div className="w-full max-w-[1440px] mx-auto space-y-16">
 
-        <div className="text-center text-left mb-10 px-4 pt-1 md:px-0">
-          <h1 className="text-2xl md:text-3xl font-bold text-[#6E0000] mb-4">
-            Nutraceutical Oral Liquid And Protein Powder
-          </h1>
-          <p className="text-gray-700 text-left max-w-[1440px] mx-auto">
-            Established as a Sole Proprietorship firm in the year 2017, we "S Kins Pharma" are a leading Manufacturer of a wide range of Pharmaceutical Syrup, Pharmaceutical Suspension, Protein Powder, etc.
-          </p>
-        </div>
-
-        {categories.map((cat, index) => (
-          <div
-            key={index}
-            className="rounded-2xl shadow-xl border border-[#E8CACA] p-10 bg-[#FFF5F5]"
-          >
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[#6E0000] text-left">
-              {cat.title}
-            </h2>
-
-            {/* Description */}
-            <p className="mt-3 text-gray-700 max-w-4xl text-left">
-              {cat.desc}
+          <div className="text-center text-left mb-10 px-4 pt-1 md:px-0">
+            <h1 className="text-2xl md:text-3xl font-bold text-[#6E0000] mb-4">
+              Nutraceutical Oral Liquid And Protein Powder
+            </h1>
+            <p className="text-gray-700 text-left max-w-[1440px] mx-auto">
+              Established as a Sole Proprietorship firm in the year 2017, we "S Kins Pharma" are a leading Manufacturer of a wide range of Pharmaceutical Syrup, Pharmaceutical Suspension, Protein Powder, etc.
             </p>
+          </div>
 
-            {/* Products Grid */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-              {cat.products.map((p, productIndex) => (
-                <div
-                  key={productIndex}
-                  className="bg-white rounded-xl border shadow-sm hover:shadow-lg transition p-4 flex flex-col"
-                >
-                  {/* Image */}
-                  <div className="w-full h-48 flex justify-center items-center">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="w-full h-full object-contain"
-                    />
+          {categories.map((cat, index) => (
+            <div
+              key={index}
+              className="rounded-2xl shadow-xl border border-[#E8CACA] p-10 bg-[#FFF5F5]"
+            >
+              {/* Heading */}
+              <h2 className="text-3xl md:text-4xl font-bold text-[#6E0000] text-left">
+                {cat.title}
+              </h2>
+
+              {/* Description */}
+              <p className="mt-3 text-gray-700 max-w-4xl text-left">
+                {cat.desc}
+              </p>
+
+              {/* Products Grid */}
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                {cat.products.map((p, productIndex) => (
+                  <div
+                    key={productIndex}
+                    className="bg-white rounded-xl border shadow-sm hover:shadow-lg transition p-4 flex flex-col"
+                  >
+                    {/* Image */}
+                    <div className="w-full h-48 flex justify-center items-center">
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Name */}
+                    <p
+                      onClick={() => router.push(`/products/${cat.id}#${p.id}`)}
+                      className="mt-4 text-center font-medium text-gray-900 text-[15px] leading-5 px-1 cursor-pointer hover:text-[#6E0000] transition"
+                    >
+                      {p.title}
+                    </p>
+  
                   </div>
+                ))}
+              </div>
 
-                  {/* Name */}
-                  <p className="mt-4 text-center font-medium text-gray-900 text-[15px] leading-5 px-1">
-                    {p.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* View More */}
-            <div className="flex justify-end mt-8">
-              <Link href={`/products/${cat.id}`}>
-                <button className="bg-[#860000] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#5a0000] transition">
+              {/* View More */}
+              <div className="flex justify-end mt-8">
+                <button
+                  onClick={() => router.push(`/products/${cat.id}`)}
+                  className="bg-[#860000] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#5a0000] transition"
+                >
                   View More
                 </button>
-              </Link>
+              </div>
+
             </div>
-          </div>
-        ))}
+          ))}
 
+        </div>
       </div>
-    </div>
 
-    <Footer />
+      <Footer />
     </>
   );
 }
