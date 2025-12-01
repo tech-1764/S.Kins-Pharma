@@ -11,7 +11,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
+        { name: "About Us", href: "/about-us" },
         { name: "Products & Services", href: "/products&services" },
         { name: "Gallery", href: "/gallery" },
         { name: "Contact Us", href: "/contact" },
@@ -92,9 +92,9 @@ export default function Navbar() {
 
                         {/* About */}
                         <div className="relative group">
-                            <button className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
+                            <Link href="about" className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
                                 About Us
-                            </button>
+                            </Link>
 
                             <div className="absolute top-16 left-0 bg-white text-black shadow-xl hidden group-hover:block w-[220px] py-4 px-6 z-50">
                                 <div className="space-y-3">
@@ -175,89 +175,71 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="md:hidden bg-[#6E0000] py-3">
-                        <div className="flex flex-col items-center gap-3">
-                            {/* Desktop Menu */}
-                            <div className="hidden md:flex gap-7">
+                    <div className="md:hidden bg-[#6E0000] py-4 px-4 space-y-4">
 
-                                {/* Home */}
-                                <Link
-                                    href="/"
-                                    className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                                >
-                                    Home
-                                </Link>
+                        {/* Home */}
+                        <Link
+                            href="/"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Home
+                        </Link>
 
-                                {/* About */}
-                                <Link
-                                    href="/about"
-                                    className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                                >
-                                    About
-                                </Link>
+                        {/* About Us */}
+                        <Link
+                            href="/about-us"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            About Us
+                        </Link>
 
-                                {/* PRODUCTS & SERVICES Mega Menu */}
-                                <div className="relative group">
-                                    <button className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
-                                        Products & Services
-                                    </button>
+                        {/* Products & Services (Accordion Style) */}
+                        <details className="text-white">
+                            <summary className="cursor-pointer py-2 text-[16px] uppercase">
+                                Products & Services
+                            </summary>
 
-                                    <div className="absolute top-16 left-0 w-[800px] bg-white text-black shadow-xl hidden group-hover:flex p-6 z-50">
-                                        <div className="grid grid-cols-4 gap-6 text-sm">
+                            <div className="mt-2 bg-[#7a0000] rounded-md p-3 space-y-2">
 
-                                            <div className="space-y-3">
-                                                <Link href="#" className="block hover:text-[#860000] font-semibold">Asthmatic</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Ayurvedic</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Tablets</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Capsules</Link>
-                                            </div>
+                                {productsMenu.map((section, index) => (
+                                    <div key={index}>
+                                        <p className="font-semibold text-[15px] mb-1">{section.title}</p>
 
-                                            <div className="space-y-3">
-                                                <Link href="#" className="block hover:text-[#860000] font-semibold">Syrup & Suspension</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Dry Syrup</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Eye / Ear</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Injection</Link>
-                                            </div>
-
-                                            <div className="space-y-3">
-                                                <Link href="#" className="block hover:text-[#860000] font-semibold">Lotion</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Oils</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Nutraceuticals</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Ointment</Link>
-                                            </div>
-
-                                            <div className="space-y-3">
-                                                <Link href="#" className="block hover:text-[#860000] font-semibold">Powder</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Soap</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Soft Gel</Link>
-                                                <Link href="#" className="block hover:text-[#860000]">Spray Gel</Link>
-                                            </div>
-
+                                        <div className="pl-3 space-y-1">
+                                            {section.items.map((item, i) => (
+                                                <p key={i} className="text-sm opacity-90">{item}</p>
+                                            ))}
                                         </div>
+
+                                        {section.more && (
+                                            <p className="text-sm text-yellow-300 underline mt-1">...more</p>
+                                        )}
+
                                     </div>
-                                </div>
-
-                                {/* Gallery */}
-                                <Link
-                                    href="/gallery"
-                                    className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                                >
-                                    Gallery
-                                </Link>
-
-                                {/* Contact */}
-                                <Link
-                                    href="/contact"
-                                    className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                                >
-                                    Contact Us
-                                </Link>
+                                ))}
 
                             </div>
+                        </details>
 
-                        </div>
+                        {/* Gallery */}
+                        <Link
+                            href="/gallery"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Gallery
+                        </Link>
+
+                        {/* Contact */}
+                        <Link
+                            href="/contact"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Contact Us
+                        </Link>
+
                     </div>
                 )}
+
             </nav>
 
         </header>

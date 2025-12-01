@@ -19,7 +19,7 @@ import { detailedProducts } from "@/data/detailedProducts";
 
 export default function ProductsServices() {
   const router = useRouter();
-  const proteinProducts = detailedProducts["protein-powder"];
+const allProducts = Object.values(detailedProducts).flat();
 
   const categories = [
     {
