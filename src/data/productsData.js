@@ -9,7 +9,7 @@ export const proteinProducts = [
 
 export const suspensionProducts = [
   { title: "Lycopene Multivitamins Suspension", img: "/assets/suspension1.png" },
-  { title: "Ferrous Ascorbate & Folic Acid Suspension", img: "/assets/suspension2.png" },
+  { title: "Ferrous Ascorbate & Folic Acid Suspension", img: "/pharma-suspension/Ferrous-Ascorbate.jpeg" },
   { title: "Silymarin + L-Ornithine Suspension", img: "/assets/suspension3.png" },
   { title: "Ferrous Ascorbate Zinc Suspension", img: "/assets/suspension4.png" },
 ];

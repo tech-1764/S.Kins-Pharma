@@ -14,7 +14,6 @@ import {
   sweetenerProducts
 } from "@/data/productsData";
 import { useRouter } from "next/navigation";
-import { products } from "@/data/products";
 import { detailedProducts } from "@/data/detailedProducts";
 
 export default function ProductsServices() {

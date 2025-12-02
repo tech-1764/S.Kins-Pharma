@@ -155,9 +155,8 @@ export const detailedProducts = {
       shelfLife: "18 Month",
       medicineType: "Allopathic",
       images: [
-        "/products/suspension/ferrokin-1.png",
-        "/products/suspension/ferrokin-2.png",
-        "/products/suspension/ferrokin-3.png",
+        "/pharma-suspension/Ferrous-Ascorbate.jpeg",
+        "/pharma-suspension/Ferrous-Ascorbate2.jpeg",
       ],
       description:
         "A wide range of Ferrous Ascorbate and Folic Acid Suspension keeping in mind vast necessities of patrons.",
@@ -479,7 +478,7 @@ export const detailedProducts = {
     },
   ],
 
-  capsules: [
+  "capsules": [
     {
       id: 1,
       title: "Multivitamin Tablets & Capsules",

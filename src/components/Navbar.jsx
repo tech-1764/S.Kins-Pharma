@@ -19,7 +19,9 @@ export default function Navbar() {
 
 
     return (
-        <header className="w-full top-0 left-0 z-50">
+        <>
+        {/* ===== TOP SECTION (not sticky) ===== */}
+        <header className="w-full">
 
             {/* ===== TOP INFO BAR ===== */}
             <div className="bg-[#F5E6E6] text-[#5A0000] text-sm border-b shadow-md border-[#E4C2C2]">
@@ -76,172 +78,173 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* ===== MAIN NAV BAR ===== */}
-            <nav className="bg-[#860000] text-gray-100 sticky top-0 shadow-xl">
-                <div className="container mx-auto flex items-center justify-around h-16 px-4">
+        </header>
 
-                    <div className="hidden md:flex gap-7">
+        {/* ===== MAIN NAV BAR (sticky) ===== */}
+        <nav className="bg-[#860000]/95 backdrop-blur-sm text-gray-100 sticky top-0 z-50 shadow-xl">
+            <div className="container mx-auto flex items-center justify-around h-16 px-4">
 
-                        {/* Home */}
-                        <Link
-                            href="/"
-                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                        >
-                            Home
-                        </Link>
+                <div className="hidden md:flex gap-7">
 
-                        {/* About */}
-                        <div className="relative group">
-                            <Link href="about" className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
-                                About Us
-                            </Link>
-
-                            <div className="absolute top-16 left-0 bg-white text-black shadow-xl hidden group-hover:block w-[220px] py-4 px-6 z-50">
-                                <div className="space-y-3">
-                                    <Link href="#" className="block hover:text-[#860000]">Testimonial</Link>
-                                    <Link href="#" className="block hover:text-[#860000]">Download Brochure</Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* PRODUCTS & SERVICES Mega Menu */}
-
-                        <div className="relative group">
-                            <Link
-                                href="/products&services"
-                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
-                                Products & Services
-                            </Link>
-
-                            <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
-
-                                <div className="grid grid-cols-4 gap-10 text-sm leading-6">
-
-                                    {productsMenu.map((section, index) => (
-                                        <div key={index} className="mb-6">
-
-                                            <p className="font-bold text-[17px] mb-2">{section.title}</p>
-
-                                            <div className="flex flex-col gap-1">
-                                                {section.items.map((item, i) => (
-                                                    <Link key={i} href="#" className="hover:text-[#860000]">
-                                                        {item}
-                                                    </Link>
-                                                ))}
-                                            </div>
-
-                                            {section.more && (
-                                                <Link
-                                                    href="#"
-                                                    className="block mt-1 text-[#860000] underline"
-                                                >
-                                                    ...more
-                                                </Link>
-                                            )}
-                                        </div>
-                                    ))}
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {/* Gallery */}
-                        <Link
-                            href="/gallery"
-                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                        >
-                            Gallery
-                        </Link>
-
-                        {/* Contact */}
-                        <Link
-                            href="/contact"
-                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                        >
-                            Contact Us
-                        </Link>
-
-                    </div>
-                    {/* Mobile Toggle */}
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden text-white text-right"
+                    {/* Home */}
+                    <Link
+                        href="/"
+                        className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
                     >
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
+                        Home
+                    </Link>
 
-                </div>
-
-                {/* Mobile Menu */}
-                {isOpen && (
-                    <div className="md:hidden bg-[#6E0000] py-4 px-4 space-y-4">
-
-                        {/* Home */}
-                        <Link
-                            href="/"
-                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                        >
-                            Home
-                        </Link>
-
-                        {/* About Us */}
-                        <Link
-                            href="/about-us"
-                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                        >
+                    {/* About */}
+                    <div className="relative group">
+                        <Link href="about" className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
                             About Us
                         </Link>
 
-                        {/* Products & Services (Accordion Style) */}
-                        <details className="text-white">
-                            <summary className="cursor-pointer py-2 text-[16px] uppercase">
-                                Products & Services
-                            </summary>
+                        <div className="absolute top-16 left-0 bg-white text-black shadow-xl hidden group-hover:block w-[220px] py-4 px-6 z-50">
+                            <div className="space-y-3">
+                                <Link href="#" className="block hover:text-[#860000]">Testimonial</Link>
+                                <Link href="#" className="block hover:text-[#860000]">Download Brochure</Link>
+                            </div>
+                        </div>
+                    </div>
 
-                            <div className="mt-2 bg-[#7a0000] rounded-md p-3 space-y-2">
+                    {/* PRODUCTS & SERVICES Mega Menu */}
+
+                    <div className="relative group">
+                        <Link
+                            href="/products&services"
+                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
+                            Products & Services
+                        </Link>
+
+                        <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
+
+                            <div className="grid grid-cols-4 gap-10 text-sm leading-6">
 
                                 {productsMenu.map((section, index) => (
-                                    <div key={index}>
-                                        <p className="font-semibold text-[15px] mb-1">{section.title}</p>
+                                    <div key={index} className="mb-6">
 
-                                        <div className="pl-3 space-y-1">
+                                        <p className="font-bold text-[17px] mb-2">{section.title}</p>
+
+                                        <div className="flex flex-col gap-1">
                                             {section.items.map((item, i) => (
-                                                <p key={i} className="text-sm opacity-90">{item}</p>
+                                                <Link key={i} href="#" className="hover:text-[#860000]">
+                                                    {item}
+                                                </Link>
                                             ))}
                                         </div>
 
                                         {section.more && (
-                                            <p className="text-sm text-yellow-300 underline mt-1">...more</p>
+                                            <Link
+                                                href="#"
+                                                className="block mt-1 text-[#860000] underline"
+                                            >
+                                                ...more
+                                            </Link>
                                         )}
-
                                     </div>
                                 ))}
 
                             </div>
-                        </details>
-
-                        {/* Gallery */}
-                        <Link
-                            href="/gallery"
-                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                        >
-                            Gallery
-                        </Link>
-
-                        {/* Contact */}
-                        <Link
-                            href="/contact"
-                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                        >
-                            Contact Us
-                        </Link>
-
+                        </div>
                     </div>
-                )}
 
-            </nav>
 
-        </header>
+                    {/* Gallery */}
+                    <Link
+                        href="/gallery"
+                        className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
+                    >
+                        Gallery
+                    </Link>
+
+                    {/* Contact */}
+                    <Link
+                        href="/contact"
+                        className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
+                    >
+                        Contact Us
+                    </Link>
+
+                </div>
+                {/* Mobile Toggle */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-white text-right"
+                >
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
+
+            </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="md:hidden bg-[#6E0000] py-4 px-4 space-y-4">
+
+                    {/* Home */}
+                    <Link
+                        href="/"
+                        className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                    >
+                        Home
+                    </Link>
+
+                    {/* About Us */}
+                    <Link
+                        href="/about-us"
+                        className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                    >
+                        About Us
+                    </Link>
+
+                    {/* Products & Services (Accordion Style) */}
+                    <details className="text-white">
+                        <summary className="cursor-pointer py-2 text-[16px] uppercase">
+                            Products & Services
+                        </summary>
+
+                        <div className="mt-2 bg-[#7a0000] rounded-md p-3 space-y-2">
+
+                            {productsMenu.map((section, index) => (
+                                <div key={index}>
+                                    <p className="font-semibold text-[15px] mb-1">{section.title}</p>
+
+                                    <div className="pl-3 space-y-1">
+                                        {section.items.map((item, i) => (
+                                            <p key={i} className="text-sm opacity-90">{item}</p>
+                                        ))}
+                                    </div>
+
+                                    {section.more && (
+                                        <p className="text-sm text-yellow-300 underline mt-1">...more</p>
+                                    )}
+
+                                </div>
+                            ))}
+
+                        </div>
+                    </details>
+
+                    {/* Gallery */}
+                    <Link
+                        href="/gallery"
+                        className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                    >
+                        Gallery
+                    </Link>
+
+                    {/* Contact */}
+                    <Link
+                        href="/contact"
+                        className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                    >
+                        Contact Us
+                    </Link>
+
+                </div>
+            )}
+
+        </nav>
+        </>
     );
 }

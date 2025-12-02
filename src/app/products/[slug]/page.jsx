@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ImageGallery from "@/components/ImageGallery";
 import { detailedProducts, categoryDescriptions } from "@/data/detailedProducts";
 import React from "react";
 
@@ -52,14 +53,8 @@ export default function CategoryDetailsPage({ params }) {
             {/* GRID */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
 
-              {/* IMAGE */}
-              <div className="w-full h-64 flex justify-center items-center">
-                <img
-                  src={p.imgMain}
-                  alt={p.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              {/* IMAGE GALLERY */}
+              <ImageGallery images={p.images} alt={p.title} />
 
               {/* RIGHT DETAILS SECTION */}
               <div className="space-y-4 text-gray-700 text-[15px]">
