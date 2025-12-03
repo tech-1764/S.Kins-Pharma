@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Pi, User, User2 } from "lucide-react";
 import { FaLeaf, FaFlask, FaHandshake } from "react-icons/fa";
-
+import { productCategories } from "@/data/productsData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { productsMenu } from "@/data/productsMenu";
+import { productsData } from "@/data/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -26,6 +26,8 @@ export default function Home() {
     message: "",
   });
 
+  // const productCategories =
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -38,14 +40,9 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        form,
-        {
-          publicKey: PUBLIC_KEY,
-        }
-      );
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, form, {
+        publicKey: PUBLIC_KEY,
+      });
       Swal.fire({
         icon: "success",
         title: "Message Sent",
@@ -94,7 +91,7 @@ export default function Home() {
           {/* RIGHT IMAGE */}
           <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
             <Image
-              src="/assets/hero-medicine.png"
+              src="/assets/hero.png"
               alt="S.Kins Pharma Products"
               width={400}
               height={300}
@@ -327,41 +324,44 @@ export default function Home() {
             }}
             className="pb-10"
           >
-            {productsMenu.map((product, idx) => (
+         
+            {Object.entries(productCategories).map(([slug, product], idx) => (
               <SwiperSlide key={idx}>
                 <div className="bg-white rounded-2xl border shadow-md hover:shadow-xl transition-all h-[530px] w-[300px] mx-auto flex flex-col">
                   {/* Image Section */}
                   <div className="h-[280px] w-full bg-gray-100 overflow-hidden rounded-t-2xl">
                     <Image
-                      src="/assets/about-us.jpg"
+                      src={product.products[0]?.img || "/assets/fallback.jpg"}
                       alt={product.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-all"               
+                      className="w-full h-full object-cover hover:scale-105 transition-all"
                       height={280}
                       width={400}
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-[#800000] px-4 my-3 transition">
+                  <h3 className="text-xl font-bold text-[#800000] px-4 my-3">
                     {product.title}
                   </h3>
 
-                  {/* List */}
-                  <ul className="text-gray-700 text-sm px-4 mt-2 space-y-1 flex-grow cursor-pointer">
-                    {product.items.slice(0, 3).map((item, i) => (
+                  {/* List First 3 Products */}
+                  <ul className="text-gray-700 text-sm px-4 mt-2 space-y-2 flex-grow">
+                    {product.products.slice(0, 3).map((item, i) => (
                       <li
                         key={i}
                         className="leading-tight hover:text-[#800000] transition"
                       >
-                        • {item}
+                        • {item.title}
                       </li>
                     ))}
                   </ul>
 
                   {/* View More Button */}
-                  <button className="mx-4 mb-4 mt-3 bg-[#800000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#660000] transition">
-                    View More
-                  </button>
+                  <Link href={`/products&services?cat=${slug}`}>
+                    <button className="mx-4 mb-4 mt-3 bg-[#800000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#660000] transition w-[80%]">
+                      View More
+                    </button>
+                  </Link>
                 </div>
               </SwiperSlide>
             ))}
@@ -370,24 +370,24 @@ export default function Home() {
         {/* HSN Code Section */}
         {/* <div className="w-full flex justify-center py-12">
           <div className="w-[90%] max-w-5xl"> */}
-            {/* Heading */}
-            {/* <h2 className="text-center text-[#800000] text-3xl font-bold mb-3">
+        {/* Heading */}
+        {/* <h2 className="text-center text-[#800000] text-3xl font-bold mb-3">
               Deals in HSN Code
             </h2> */}
 
-            {/* Simple underline (original theme) */}
-            {/* <div className="w-16 h-1 bg-[#800000] mx-auto mb-10"></div> */}
+        {/* Simple underline (original theme) */}
+        {/* <div className="w-16 h-1 bg-[#800000] mx-auto mb-10"></div> */}
 
-            {/* Table Wrapper */}
-            {/* <div className="shadow-xl rounded-md overflow-hidden border"> */}
-              {/* Header (NO THEME CHANGE) */}
-              {/* <div className="grid grid-cols-12 bg-[#F9F5F5] font-semibold text-gray-700 py-3 px-4">
+        {/* Table Wrapper */}
+        {/* <div className="shadow-xl rounded-md overflow-hidden border"> */}
+        {/* Header (NO THEME CHANGE) */}
+        {/* <div className="grid grid-cols-12 bg-[#F9F5F5] font-semibold text-gray-700 py-3 px-4">
                 <div className="col-span-3">HSN Code</div>
                 <div className="col-span-9">HSN Description</div>
               </div> */}
 
-              {/* Rows (Simple white theme) */}
-              {/* {hsnData.map((item, index) => (
+        {/* Rows (Simple white theme) */}
+        {/* {hsnData.map((item, index) => (
                 <div
                   key={index}
                   className="grid grid-cols-12 border-t py-4 px-4"
@@ -400,7 +400,6 @@ export default function Home() {
           </div> */}
         {/* </div> */}
       </section>
-      
       {/* Contact Section */}
       <div className="w-full bg-[#FFF8F8] py-16 px-6 md:px-20">
         {/* HEADING */}
@@ -541,8 +540,6 @@ export default function Home() {
       );
       {/* ⚙️ Footer */}
       <Footer />
-
-
     </main>
   );
 }

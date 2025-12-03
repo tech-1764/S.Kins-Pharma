@@ -8,17 +8,78 @@ export const proteinProducts = [
 ];
 
 export const suspensionProducts = [
-  { title: "Lycopene Multivitamins Suspension", img: "/assets/suspension1.png" },
-  { title: "Ferrous Ascorbate & Folic Acid Suspension", img: "/pharma-suspension/Ferrous-Ascorbate.jpeg" },
-  { title: "Silymarin + L-Ornithine Suspension", img: "/assets/suspension3.png" },
-  { title: "Ferrous Ascorbate Zinc Suspension", img: "/assets/suspension4.png" },
+  // rootspas-mf-ds.jpeg, Mefenamic Acid & Paracetamol Oral Suspension
+  { 
+    "title": "Mefenamic Acid & Paracetamol Oral Suspension", 
+    "img": "/pharma-suspension/rootspas-mf-ds.jpeg" 
+  },
+  // fexo-fd.jpeg, Fexofenadine HCl Oral Suspension
+  { 
+    "title": "Fexofenadine HCl Oral Suspension", 
+    "img": "/pharma-suspension/fexo-fd.jpeg" 
+  },
+  // Ferrous-Ascorbate2.jpeg, Ferrous Ascorbate & Folic Acid Suspension
+  { 
+    "title": "Ferrous Ascorbate & Folic Acid Suspension", 
+    "img": "/pharma-suspension/Ferrous-Ascorbate2.jpeg" 
+  },
+  // acceclopac-plus.jpeg, Aceclofenac & Paracetamol Suspension
+  { 
+    "title": "Aceclofenac & Paracetamol Suspension", 
+    "img": "/pharma-suspension/acceclopac-plus.jpeg" 
+  },
+  // aryth-200.jpeg, Azithromycin Oral Suspension IP
+  { 
+    "title": "Azithromycin Oral Suspension IP", 
+    "img": "/pharma-suspension/aryth-200.jpeg" 
+  },
+  // cremative.jpeg, Milk of Magnesia, Liquid Paraffin & Sodium Picosulphate Suspension
+  { 
+    "title": "Milk of Magnesia, Liquid Paraffin & Sodium Picosulphate Suspension", 
+    "img": "/pharma-suspension/cremative.jpeg" 
+  },
+  // WhatsApp Image 2025-11-30 at 7.36.38 AM (1).jpeg, Dextrometharphan Hydrobromide, Chlorphenamine Maleate & Phenylorine Hydrochloride Syrup
+  
+ 
+  { 
+    "title": "Ferrous Ascorbate & Folic Acid Suspension", 
+    "img": "/pharma-suspension/Ferrous-Ascorbate.jpeg" // यह "correct ha" के अनुसार है
+  },
+  
+  // { title: "Lycopene Multivitamins Suspension", img: "/assets/suspension1.png" },
+  // { title: "Ferrous Ascorbate & Folic Acid Suspension", img: "/pharma-suspension/Ferrous-Ascorbate.jpeg" },
+  // { title: "Silymarin + L-Ornithine Suspension", img: "/assets/suspension3.png" },
+  // { title: "Ferrous Ascorbate Zinc Suspension", img: "/assets/suspension4.png" },
 ];
 
 export const syrupProducts = [
-  { title: "Fungal Diastase & Pepsin Syrup", img: "/assets/syrup1.png" },
-  { title: "Recover VZ 200ml Syrup", img: "/assets/syrup2.png" },
-  { title: "Digefast Pineapple Flavour", img: "/assets/syrup3.png" },
-  { title: "Urocital Syrup", img: "/assets/syrup4.png" },
+  {
+    "title": "Dextrometharphan Hydrobromide, Chlorphenamine Maleate & Phenylorine Hydrochloride Syrup",
+    "img": "/pharma-syrup/v-minie-dx.jpeg"
+  },
+ 
+  {
+    "title": "Levosalbutamol Sulphate, Ambroxol Hydrochloride & Guaiphenesin Syrup",
+    "img": "/pharma-syrup/breezx-ls.jpeg"
+  },
+ 
+  {
+    "title": "Cyproheptadine Hydrochloride, Tricholine Citrate & Sorbitol Base Syrup",
+    "img": "/pharma-syrup/aptimonk.jpeg"
+  },
+  {
+    "title": "Ambroxol HCl, Levocetirizine, Guaiphenesin & Menthol Syrup",
+    "img": "/pharma-syrup/gambri-cr.jpeg"
+  },
+ 
+  {
+    "title": "Ambroxol Hydrochlorde, Guaiphenesin, Levosalbutamol Sulphate & Menthol Syrup",
+    "img": "/pharma-syrup/kofrex-la.jpeg"
+  },
+  // { title: "Fungal Diastase & Pepsin Syrup", img: "/assets/syrup1.png" },
+  // { title: "Recover VZ 200ml Syrup", img: "/assets/syrup2.png" },
+  // { title: "Digefast Pineapple Flavour", img: "/assets/syrup3.png" },
+  // { title: "Urocital Syrup", img: "/assets/syrup4.png" },
 ];
 
 export const thirdPartyProducts = [
@@ -38,8 +99,9 @@ export const franchiseProducts = [
 ];
 
 export const capsulesProducts = [
-  { title: "Multivitamin Tablets Capsules", img: "/products/capsule1.png" },
-  { title: "Soft Gel Capsules", img: "/products/capsule2.png" },
+  { title: "Pantoprazole Gastro-resistant & Domperidone prolonged-release capsules IP", img: "/pharma-capsules/nobipan-dsr.jpeg" },
+  // { title: "Multivitamin Tablets Capsules", img: "/products/capsule1.png" },
+  // { title: "Soft Gel Capsules", img: "/products/capsule2.png" },
 ];
 
 export const sweetenerProducts = [

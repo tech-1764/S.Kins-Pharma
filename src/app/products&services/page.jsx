@@ -1,7 +1,9 @@
 "use client";
-
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
 import Footer from "@/components/Footer";
+import { X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 // ---- IMPORT ALL PRODUCT ARRAYS ----
 import {
@@ -17,8 +19,11 @@ import { useRouter } from "next/navigation";
 import { detailedProducts } from "@/data/detailedProducts";
 
 export default function ProductsServices() {
+  const pathname = usePathname;
   const router = useRouter();
-const allProducts = Object.values(detailedProducts).flat();
+  const allProducts = Object.values(detailedProducts).flat();
+  const [previewImg, setPreviewImg] = useState(null);
+
 
   const categories = [
     {
@@ -114,9 +119,11 @@ const allProducts = Object.values(detailedProducts).flat();
                       <img
                         src={p.img}
                         alt={p.title}
-                        className="w-full h-full object-contain"
+                        onClick={() => setPreviewImg(p.img)}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition"
                       />
                     </div>
+
 
                     {/* Name */}
                     <p
@@ -125,25 +132,46 @@ const allProducts = Object.values(detailedProducts).flat();
                     >
                       {p.title}
                     </p>
-  
+
                   </div>
                 ))}
               </div>
 
               {/* View More */}
-              <div className="flex justify-end mt-8">
+              {/* <div className="flex justify-end mt-8">
                 <button
                   onClick={() => router.push(`/products/${cat.id}`)}
                   className="bg-[#860000] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#5a0000] transition"
                 >
                   View More
                 </button>
-              </div>
+              </div> */}
 
             </div>
           ))}
 
         </div>
+        {previewImg && (
+          <div
+            className="fixed inset-0 bg-black/80 flex justify-center items-center z-[9999]"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setPreviewImg(null)}
+              className="absolute top-4 right-4 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition animate-zoomOut"
+            >
+              <X size={26} />
+            </button>
+
+            {/* Image */}
+            <img
+              src={previewImg}
+              className="max-w-[90%] max-h-[90%] object-contain animate-zoomIn"
+            />
+          </div>
+        )}
+
+
       </div>
 
       <Footer />
