@@ -62,9 +62,9 @@ export default function Home() {
   return (
     <main className="bg-[#FFF8F8] text-[#1A1A1A] min-h-screen">
       {/* 🔹 Navbar */}
-      <section className="bg-white shadow-md top-0 left-0 w-full">
+      {/* <section className="bg-white shadow-md top-0 left-0 w-full"> */}
         <Navbar />
-      </section>
+      {/* </section> */}
       {/* 🌿 Hero Section */}
       {/* <section className="bg-[#FDF0F3] text-black mt-0"> */}
       <section className="bg-[#EEDCDC] text-black mt-0">
@@ -134,7 +134,7 @@ export default function Home() {
             </p>
 
             <Link
-              href="/about"
+              href="/products&services"
               className="inline-block mt-4 bg-[#800000] text-white px-7 py-2 rounded-full shadow-md hover:bg-[#660000] transition-all"
             >
               Read More <ArrowRight className="ml-2 w-4 h-4" />
@@ -316,10 +316,10 @@ export default function Home() {
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
             spaceBetween={10}
-            slidesPerView={1.2}
+            slidesPerView={1}
             breakpoints={{
-              640: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3.3 },
+              640: { slidesPerView: 1 },
+              1024: { slidesPerView: 3 },
               1280: { slidesPerView: 4 },
             }}
             className="pb-10"
@@ -519,7 +519,7 @@ export default function Home() {
             <p className="flex items-center gap-3 text-gray-800">
               <MapPin size={28} className="text-[#6E0000]" /> Plot No 43, S.Kins
               Pharma, Lodi Majra, Industrial Area Lodi Majra, Nalagarh,
-              Solan-174101, Himachal Pradesh, India
+              Solan-173205, Himachal Pradesh, India
             </p>
 
             {/* MAP */}

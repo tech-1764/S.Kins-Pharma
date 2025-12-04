@@ -1,11 +1,34 @@
 // Individual product arrays for each category
-export const proteinProducts = [
-  { title: "Junior Chocolate Protein Powder", img: "/products/pro1.png" },
-  { title: "Energy Drink Cum ORS Liquid", img: "/products/pro2.png" },
-  { title: "Chocolate Protein Powder", img: "/products/pro3.png" },
-  { title: "Sr Protein Powder", img: "/products/pro4.png" },
-  { title: "Strawberry Flavour Protein Powder", img: "/products/pro5.png" },
-];
+// export const proteinProducts = [
+//   { title: "Junior Chocolate Protein Powder", img: "/products/pro1.png" },
+//   { title: "Energy Drink Cum ORS Liquid", img: "/products/pro2.png" },
+//   { title: "Chocolate Protein Powder", img: "/products/pro3.png" },
+//   { title: "Sr Protein Powder", img: "/products/pro4.png" },
+//   { title: "Strawberry Flavour Protein Powder", img: "/products/pro5.png" },
+// ];
+
+export const teamPics = [
+  {
+    "title": " ",
+    "img": "/team/1.1/jpeg"
+  },
+  {
+    "title": " ",
+    "img": "/team/1/jpeg"
+  },
+  {
+    "title": " ",
+    "img": "/team/2/jpeg"
+  },
+  {
+    "title": " ",
+    "img": "/team/3/jpeg"
+  },
+  {
+    "title": " ",
+    "img": "/team/4/jpeg"
+  },
+]
 
 export const suspensionProducts = [
   // rootspas-mf-ds.jpeg, Mefenamic Acid & Paracetamol Oral Suspension
@@ -82,21 +105,21 @@ export const syrupProducts = [
   // { title: "Urocital Syrup", img: "/assets/syrup4.png" },
 ];
 
-export const thirdPartyProducts = [
-  { title: "TPM in Tamil Nadu", img: "/assets/tpm1.png" },
-  { title: "TPM in Sikkim", img: "/assets/tpm2.png" },
-  { title: "TPM in UP", img: "/assets/tpm3.png" },
-  { title: "TPM in Punjab", img: "/assets/tpm4.png" },
-  { title: "TPM Pharma Services", img: "/assets/tpm5.png" },
-];
+// export const thirdPartyProducts = [
+//   { title: "TPM in Tamil Nadu", img: "/assets/tpm1.png" },
+//   { title: "TPM in Sikkim", img: "/assets/tpm2.png" },
+//   { title: "TPM in UP", img: "/assets/tpm3.png" },
+//   { title: "TPM in Punjab", img: "/assets/tpm4.png" },
+//   { title: "TPM Pharma Services", img: "/assets/tpm5.png" },
+// ];
 
-export const franchiseProducts = [
-  { title: "Protein With Iron Syrup", img: "/products/pro1.png" },
-  { title: "Cufkin-Ls 100ml", img: "/products/pro2.png" },
-  { title: "PCD Franchise Chhattisgarh", img: "/products/pro3.png" },
-  { title: "Sr Protein Powder", img: "/products/pro4.png" },
-  { title: "Strawberry Flavour Powder", img: "/products/pro5.png" },
-];
+// export const franchiseProducts = [
+//   { title: "Protein With Iron Syrup", img: "/products/pro1.png" },
+//   { title: "Cufkin-Ls 100ml", img: "/products/pro2.png" },
+//   { title: "PCD Franchise Chhattisgarh", img: "/products/pro3.png" },
+//   { title: "Sr Protein Powder", img: "/products/pro4.png" },
+//   { title: "Strawberry Flavour Powder", img: "/products/pro5.png" },
+// ];
 
 export const capsulesProducts = [
   { title: "Pantoprazole Gastro-resistant & Domperidone prolonged-release capsules IP", img: "/pharma-capsules/nobipan-dsr.jpeg" },
@@ -104,18 +127,18 @@ export const capsulesProducts = [
   // { title: "Soft Gel Capsules", img: "/products/capsule2.png" },
 ];
 
-export const sweetenerProducts = [
-  { title: "Neo Sucralose Sweetener", img: "/products/sweetener1.png" },
-];
+// export const sweetenerProducts = [
+//   { title: "Neo Sucralose Sweetener", img: "/products/sweetener1.png" },
+// ];
 
 // Legacy export for backward compatibility
 export const productCategories = {
-  "protein-powder": {
-    title: "Protein Powder",
-    description:
-      "Prominent & Leading Manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder...",
-    products: proteinProducts,
-  },
+  // "protein-powder": {
+  //   title: "Protein Powder",
+  //   description:
+  //     "Prominent & Leading Manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder...",
+  //   products: proteinProducts,
+  // },
 
   "pharma-suspension": {
     title: "Pharmaceutical Suspension",
@@ -131,18 +154,18 @@ export const productCategories = {
     products: syrupProducts,
   },
 
-  "third-party": {
-    title: "Third Party Manufacturing",
-    description:
-      "We provide prompt and reliable Third Party Manufacturing.",
-    products: thirdPartyProducts,
-  },
+  // "third-party": {
+  //   title: "Third Party Manufacturing",
+  //   description:
+  //     "We provide prompt and reliable Third Party Manufacturing.",
+  //   products: thirdPartyProducts,
+  // },
 
-  "pcd-franchise": {
-    title: "PCD Pharma Franchise",
-    description: "Emerged as a reputed service provider...",
-    products: franchiseProducts,
-  },
+  // "pcd-franchise": {
+  //   title: "PCD Pharma Franchise",
+  //   description: "Emerged as a reputed service provider...",
+  //   products: franchiseProducts,
+  // },
 
   "capsules": {
     title: "Pharmaceutical Capsules",
@@ -150,9 +173,9 @@ export const productCategories = {
     products: capsulesProducts,
   },
 
-  "sweetener": {
-    title: "Artificial Sweetener",
-    description: "We offer Neo Sucralose Sweetener.",
-    products: sweetenerProducts,
-  },
+  // "sweetener": {
+  //   title: "Artificial Sweetener",
+  //   description: "We offer Neo Sucralose Sweetener.",
+  //   products: sweetenerProducts,
+  // },
 };

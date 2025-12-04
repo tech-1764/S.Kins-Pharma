@@ -190,7 +190,7 @@ export default function Home() {
                         <p className="flex items-center gap-3 text-gray-800">
                             <MapPin size={28} className="text-[#6E0000]" /> Plot No 43, S.Kins
                             Pharma, Lodi Majra, Industrial Area Lodi Majra, Nalagarh,
-                            Solan-174101, Himachal Pradesh, India
+                            Solan-173205, Himachal Pradesh, India
                         </p>
 
                         {/* MAP */}

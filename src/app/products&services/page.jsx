@@ -7,13 +7,13 @@ import { usePathname } from "next/navigation";
 
 // ---- IMPORT ALL PRODUCT ARRAYS ----
 import {
-  proteinProducts,
+  // proteinProducts,
   suspensionProducts,
   syrupProducts,
-  thirdPartyProducts,
-  franchiseProducts,
+  // thirdPartyProducts,
+  // franchiseProducts,
   capsulesProducts,
-  sweetenerProducts
+  // sweetenerProducts
 } from "@/data/productsData";
 import { useRouter } from "next/navigation";
 import { detailedProducts } from "@/data/detailedProducts";
@@ -26,13 +26,13 @@ export default function ProductsServices() {
 
 
   const categories = [
-    {
-      id: "protein-powder",
-      title: "Protein Powder",
-      desc:
-        "Prominent & leading manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder, ORS Liquid, Sr Protein Powder and more.",
-      products: proteinProducts,
-    },
+    // {
+    //   id: "protein-powder",
+    //   title: "Protein Powder",
+    //   desc:
+    //     "Prominent & leading manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder, ORS Liquid, Sr Protein Powder and more.",
+    //   products: proteinProducts,
+    // },
     {
       id: "pharma-suspension",
       title: "Pharmaceutical Suspension",
@@ -47,20 +47,20 @@ export default function ProductsServices() {
         "Our range includes Fungal Diastase & Pepsin Syrup, Recover-VZ, Digefast Pineapple Flavour and Urocital Syrup.",
       products: syrupProducts,
     },
-    {
-      id: "third-party",
-      title: "Third Party Manufacturing",
-      desc:
-        "Bestowed with vast knowledge, we offer prompt and reliable Third Party Pharma Manufacturing services.",
-      products: thirdPartyProducts,
-    },
-    {
-      id: "pcd-franchise",
-      title: "PCD Pharma Franchise",
-      desc:
-        "Emerged as a reputed provider, we render qualitative PCD Pharma Franchise services across India.",
-      products: franchiseProducts,
-    },
+    // {
+    //   id: "third-party",
+    //   title: "Third Party Manufacturing",
+    //   desc:
+    //     "Bestowed with vast knowledge, we offer prompt and reliable Third Party Pharma Manufacturing services.",
+    //   products: thirdPartyProducts,
+    // },
+    // {
+    //   id: "pcd-franchise",
+    //   title: "PCD Pharma Franchise",
+    //   desc:
+    //     "Emerged as a reputed provider, we render qualitative PCD Pharma Franchise services across India.",
+    //   products: franchiseProducts,
+    // },
     {
       id: "capsules",
       title: "Pharmaceutical Capsules",
@@ -68,13 +68,13 @@ export default function ProductsServices() {
         "Manufacturer of Multivitamin Capsules, Soft Gel Capsules and high-quality pharma capsules.",
       products: capsulesProducts,
     },
-    {
-      id: "sweetener",
-      title: "Artificial Sweetener",
-      desc:
-        "We offer high-quality Neo Sucralose Artificial Sweetener.",
-      products: sweetenerProducts,
-    },
+    // {
+    //   id: "sweetener",
+    //   title: "Artificial Sweetener",
+    //   desc:
+    //     "We offer high-quality Neo Sucralose Artificial Sweetener.",
+    //   products: sweetenerProducts,
+    // },
   ];
 
   return (

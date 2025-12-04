@@ -18,7 +18,7 @@ export default function Footer() {
                 </div>
 
                 {/* Social Links */}
-                <div className="ml-12">
+                <div className="md:ml-12">
                     <h4 className="text-xl font-semibold text-[#800000] mb-4 ">Social Links</h4>
                     <ul className="space-y-2 text-gray-700">
                         <li><Link href="#" className="flex hover:text-[#660000] transition items-center gap-2">

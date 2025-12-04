@@ -42,7 +42,7 @@ export default function Navbar() {
 
 
     return (
-        <>
+        <div>
             {/* ===== TOP SECTION (not sticky) ===== */}
             <header className="w-full">
 
@@ -106,13 +106,15 @@ export default function Navbar() {
                             <div className="mt-3 bg-white rounded-xl border shadow max-h-64 overflow-y-auto">
                                 {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b last:border-none"
-                                        >
-                                            <p className="font-medium text-sm">{product.title}</p>
-                                            <p className="text-xs text-gray-500">{product.category}</p>
-                                        </div>
+                                        <Link href="/products&services">
+                                            <div
+                                                key={idx}
+                                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b last:border-none"
+                                            >
+                                                <p className="font-medium text-sm">{product.title}</p>
+                                                <p className="text-xs text-gray-500">{product.category}</p>
+                                            </div>
+                                        </Link>
                                     ))
                                 ) : (
                                     <p className="px-4 py-3 text-sm text-gray-500">No products found</p>
@@ -121,108 +123,109 @@ export default function Navbar() {
                         )}
                     </div>
                 </div>
+            </header>
 
 
 
 
 
 
-                {/* ===== MAIN NAV BAR (sticky) ===== */}
-                <nav className="bg-[#860000]/95 backdrop-blur-sm text-gray-100 sticky top-0 z-50 shadow-xl">
-                    <div className="container mx-auto flex items-center justify-around h-16 px-4">
+            {/* ===== MAIN NAV BAR (sticky) ===== */}
+            <div className="sticky top-0 left-0 w-full z-[9999]">
+                <nav className="bg-[#860000]/95 backdrop-blur-md text-gray-100 shadow-lg">                    <div className="container mx-auto flex items-center justify-around h-16 px-4">
 
-                        <div className="hidden md:flex gap-7">
+                    <div className="hidden md:flex gap-7">
 
-                            {/* Home */}
-                            <Link
-                                href="/"
-                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                            >
-                                Home
-                            </Link>
-
-                            {/* About */}
-                            <div className="relative group">
-                                <Link href="about" className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
-                                    About Us
-                                </Link>
-
-                                <div className="absolute top-16 left-0 bg-white text-black shadow-xl hidden group-hover:block w-[220px] py-4 px-6 z-50">
-                                    <div className="space-y-3">
-                                        <Link href="#" className="block hover:text-[#860000]">Testimonial</Link>
-                                        <Link href="#" className="block hover:text-[#860000]">Download Brochure</Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* PRODUCTS & SERVICES Mega Menu */}
-
-                            <div className="relative group">
-                                <Link
-                                    href="/products&services"
-                                    className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
-                                    Products & Services
-                                </Link>
-
-                                <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
-
-                                    <div className="grid grid-cols-4 gap-10 text-sm leading-6">
-
-                                        {productsMenu.map((section, index) => (
-                                            <div key={index} className="mb-6">
-
-                                                <p className="font-bold text-[17px] mb-2">{section.title}</p>
-
-                                                <div className="flex flex-col gap-1">
-                                                    {section.items.map((item, i) => (
-                                                        <Link key={i} href="#" className="hover:text-[#860000]">
-                                                            {item}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-
-                                                {section.more && (
-                                                    <Link
-                                                        href="#"
-                                                        className="block mt-1 text-[#860000] underline"
-                                                    >
-                                                        ...more
-                                                    </Link>
-                                                )}
-                                            </div>
-                                        ))}
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            {/* Gallery */}
-                            <Link
-                                href="/gallery"
-                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                            >
-                                Gallery
-                            </Link>
-
-                            {/* Contact */}
-                            <Link
-                                href="/contact"
-                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
-                            >
-                                Contact Us
-                            </Link>
-
-                        </div>
-                        {/* Mobile Toggle */}
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden text-white text-right"
+                        {/* Home */}
+                        <Link
+                            href="/"
+                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
                         >
-                            {isOpen ? <X size={28} /> : <Menu size={28} />}
-                        </button>
+                            Home
+                        </Link>
+
+                        {/* About */}
+                        <div className="relative group">
+                            <Link href="/about" className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
+                                About Us
+                            </Link>
+
+                            <div className="absolute top-16 left-0 bg-white text-black shadow-xl hidden group-hover:block w-[220px] py-4 px-6 z-50">
+                                <div className="space-y-3">
+                                    <Link href="#" className="block hover:text-[#860000]">Testimonial</Link>
+                                    <Link href="#" className="block hover:text-[#860000]">Download Brochure</Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* PRODUCTS & SERVICES Mega Menu */}
+
+                        <div className="relative group">
+                            <Link
+                                href="/products&services"
+                                className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
+                                Products & Services
+                            </Link>
+
+                            <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
+
+                                <div className="grid grid-cols-3 gap-10 text-sm leading-6">
+
+                                    {productsMenu.map((section, index) => (
+                                        <div key={index} className="mb-6">
+
+                                            <p className="font-bold text-[17px] mb-3">{section.title}</p>
+
+                                            <div className="flex flex-col gap-2">
+                                                {section.items.map((item, i) => (
+                                                    <Link key={i} href="/products&services" className="hover:text-[#860000]">
+                                                        {item}
+                                                    </Link>
+                                                ))}
+                                            </div>
+
+                                            {section.more && (
+                                                <Link
+                                                    href="/products&services"
+                                                    className="block mt-1 text-[#860000] underline"
+                                                >
+                                                    ...more
+                                                </Link>
+                                            )}
+                                        </div>
+                                    ))}
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Gallery */}
+                        <Link
+                            href="/gallery"
+                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
+                        >
+                            Gallery
+                        </Link>
+
+                        {/* Contact */}
+                        <Link
+                            href="/contact"
+                            className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase"
+                        >
+                            Contact Us
+                        </Link>
 
                     </div>
+                    {/* Mobile Toggle */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden text-white text-right"
+                    >
+                        {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+
+                </div>
 
                     {/* Mobile Menu */}
                     {isOpen && (
@@ -291,8 +294,7 @@ export default function Navbar() {
                         </div>
                     )}
                 </nav>
-            </header>
-
-        </>
+            </div>
+        </div>
     )
 }
