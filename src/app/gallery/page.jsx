@@ -9,11 +9,11 @@ export default function GalleryPage() {
   const teamPics = [
     {
       "title": "Owner of S.Kins Pharma",
-      "img": "/team/1_1.jpeg"
+      "img": "/team/1.1.jpeg"
     },
     {
       "title": "Our wide range of products",
-      "img": "/team/1.jpeg"
+      "img": "/assets/1.jpeg"
     },
     {
       "title": "Team working in company",

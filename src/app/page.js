@@ -68,7 +68,7 @@ export default function Home() {
       {/* 🌿 Hero Section */}
       {/* <section className="bg-[#FDF0F3] text-black mt-0"> */}
       <section className="bg-[#EEDCDC] text-black mt-0">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-around px-26 pr-20 py-16">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-around px-26 pr-20 py-27">
           {/* LEFT */}
           <div className="md:w-1/2 space-y-6">
             <h1 className="text-4xl md:text-5xl text-[#800000] font-bold leading-tight">
@@ -81,7 +81,7 @@ export default function Home() {
             </p>
 
             <Link
-              href="/products"
+              href="/products&services"
               className="inline-flex items-center bg-white text-[#800000] px-6 py-3 rounded-full font-semibold hover:bg-[#F8EDED] transition-all"
             >
               Explore Products <ArrowRight className="ml-2 w-4 h-4" />
@@ -91,10 +91,10 @@ export default function Home() {
           {/* RIGHT IMAGE */}
           <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
             <Image
-              src="/assets/hero.png"
+              src="/assets/hero1.jpeg"
               alt="S.Kins Pharma Products"
               width={400}
-              height={300}
+              height={500}
               className="rounded-2xl shadow-xl"
             />
           </div>

@@ -47,10 +47,10 @@ export default function AboutUs() {
                     <h2 className="text-2xl font-bold text-[#6E0000] mb-4">Company Album</h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {["company-1.jpg", "company-2.jpg", "company-3.jpg", "company-4.jpg"].map((img, idx) => (
+                        {["1.1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"].map((img, idx) => (
                             <div key={idx} className="rounded-xl overflow-hidden border shadow">
                                 <Image
-                                    src={`/company/${img}`}
+                                    src={`/team/${img}`}
                                     alt="Company Album"
                                     width={500}
                                     height={700}
