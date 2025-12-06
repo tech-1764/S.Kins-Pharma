@@ -19,6 +19,8 @@ export const viewport = {
 
 
 export const metadata = {
+  metadataBase: new URL("https://s-kins-pharma.vercel.app"), 
+  
   title: "S. Kins Pharma | Top Pharmaceutical Manufacturer in India",
   description:
     "S. Kins Pharma is a leading pharmaceutical company providing high-quality pharma products including syrups, suspensions, capsules, protein powders, and third-party manufacturing services.",
