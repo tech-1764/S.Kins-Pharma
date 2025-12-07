@@ -4,8 +4,11 @@ import Image from "next/image";
 import { productCategories } from "@/data/productsData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function GalleryPage() {
+  const [previewImg, setPreviewImg] = useState(null)
   const teamPics = [
     {
       "title": "Owner of S.Kins Pharma",
@@ -68,6 +71,7 @@ export default function GalleryPage() {
                   alt={item.title}
                   width={400}
                   height={400}
+                   onClick={() => setPreviewImg(item.img)}
                   className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
@@ -95,6 +99,7 @@ export default function GalleryPage() {
             alt={item.title}
             width={400}
             height={400}
+            onClick={() => setPreviewImg(item.img)}
             className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
@@ -108,6 +113,25 @@ export default function GalleryPage() {
         </div>
       ))}
     </div >
+     {previewImg && (
+          <div
+            className="fixed inset-0 bg-black/80 flex justify-center items-center z-[9999]"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setPreviewImg(null)}
+              className="absolute top-4 right-4 text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition animate-zoomOut"
+            >
+              <X size={26} />
+            </button>
+
+            {/* Image */}
+            <img
+              src={previewImg}
+              className="max-w-[90%] max-h-[90%] object-contain animate-zoomIn"
+            />
+          </div>
+     )}
       </div >
 
     <Footer />

@@ -1,3 +1,5 @@
+import { IBM_Plex_Mono } from "next/font/google";
+
 export const productsMenu = [
 //   {
 //     title: "Protein Powder",
@@ -46,6 +48,9 @@ export const productsMenu = [
       // "Multivitamin Tablets Capsules",
       // "Soft gel Capsules",
       "Pantoprazole Gastro-resistant & Domperidone prolonged-release Capsules IP",
+       "Rabeprazole (EC) & Domperidone (SR) Capsules IP",
+       "Pantoprazole Gastro-resistant & Domperidone Prolonged-release Capsules IP",
+       "Rabeprazole Sodium (Enteric Coated) & Domperidone (Sustained Release) Capsules"
     ],
      more: true,
   },
@@ -58,6 +63,22 @@ export const productsMenu = [
       "Cyproheptadine Hydrochloride, Tricholine Citrate & Sorbitol Base Syrup",
       "Ambroxol HCl, Levocetirizine, Guaiphenesin & Menthol Syrup",
       "Ambroxol Hydrochlorde, Guaiphenesin, Levosalbutamol Sulphate & Menthol Syrup",
+      //   "Fungal Diastase And Pepsin Syrup",
+      //   "RECOVER - VZ 200ML SYRUP",
+      //   "Digefast Pineapple Flavour",
+      //   "Urocital syrup",
+    ],
+    more: true,
+  },
+
+    {
+    title: "Pharmaceutical Tablets",
+    items: [
+     "Aceclofenac, Paracetamol & Serratiopeptidase Tablets",
+     "Linezolid Tablets IP",
+     "Ferrous Ascorbate, Folic Acid & Zinc Sulphate Tablets",
+     "Nimesulide & Paracetamol Tablets",
+     "Aceclofenac & Paracetamol IP Tablets"
       //   "Fungal Diastase And Pepsin Syrup",
       //   "RECOVER - VZ 200ML SYRUP",
       //   "Digefast Pineapple Flavour",

@@ -18,6 +18,7 @@ import { hsnData } from "@/data/hsnData";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Swal from "sweetalert2";
 
+
 export default function Home() {
   const [form, setForm] = useState({
     name: "",
@@ -314,20 +315,20 @@ export default function Home() {
             modules={[Navigation, Autoplay]}
             navigation={true}
             loop={true}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
             spaceBetween={10}
             slidesPerView={1}
             breakpoints={{
               640: { slidesPerView: 1 },
               1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 4 },
+              1440: { slidesPerView: 3 },
             }}
             className="pb-10"
           >
          
             {Object.entries(productCategories).map(([slug, product], idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-white rounded-2xl border shadow-md hover:shadow-xl transition-all h-[530px] w-[300px] mx-auto flex flex-col">
+                <div className="bg-white rounded-2xl border shadow-md hover:shadow-xl transition-all h-[530px] md:w-[300px] w-3/4  mx-auto flex flex-col">
                   {/* Image Section */}
                   <div className="h-[280px] w-full bg-gray-100 overflow-hidden rounded-t-2xl">
                     <Image
@@ -401,18 +402,18 @@ export default function Home() {
         {/* </div> */}
       </section>
       {/* Contact Section */}
-      <div className="w-full bg-[#FFF8F8] py-16 px-6 md:px-20">
+      <div className="w-full bg-[#FFF8F8] py-10 px-6 md:px-20">
         {/* HEADING */}
         <h2 className="text-4xl font-bold text-center text-[#6E0000]">
           Contact Us
         </h2>
         <div className="w-24 h-1 bg-[#800000] mx-auto mt-1 rounded-full mb-13"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* RIGHT SIDE — FORM */}
           <form
             onSubmit={sendEmail}
-            className="bg-white rounded-xl px-8 py-5 shadow-xl space-y-4 w-full max-w-md mx-auto"
+            className="bg-white rounded-xl px-6 py-6 shadow-xl space-y-4 w-full max-w-md mx-auto"
           >
             <div className="mb-5">
               <h1 className="text-2xl font-semibold text-[#6E0000] mb-1">

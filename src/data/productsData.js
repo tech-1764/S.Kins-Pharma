@@ -122,17 +122,57 @@ export const syrupProducts = [
 // ];
 
 export const capsulesProducts = [
-  { title: "Pantoprazole Gastro-resistant & Domperidone prolonged-release capsules IP", img: "/pharma-capsules/nobipan-dsr.jpeg" },
+  { "title": "Pantoprazole Gastro-resistant & Domperidone prolonged-release capsules IP", "img": "/pharma-capsules/nobipan-dsr.jpeg" },
+  { "title": "Rabeprazole (EC) & Domperidone (SR) Capsules IP", "img": "/pharma-capsules/2.jpeg" },
+  { "title": "Pantoprazole Gastro-resistant & Domperidone Prolonged-release Capsules IP", "img": "/pharma-capsules/4.jpeg" },
+  { "title": "Rabeprazole Sodium (Enteric Coated) & Domperidone (Sustained Release) Capsules", "img": "/pharma-capsules/3.jpeg" }
   // { title: "Multivitamin Tablets Capsules", img: "/products/capsule1.png" },
   // { title: "Soft Gel Capsules", img: "/products/capsule2.png" },
 ];
 
+
+export const tabletsProducts = [
+  { "title": "Aceclofenac, Paracetamol & Serratiopeptidase Tablets", "img": "/pharma-tablets/5.jpeg" },
+  { "title": "Linezolid Tablets IP", "img": "/pharma-tablets/4.jpeg" },
+  { "title": "Ferrous Ascorbate, Folic Acid & Zinc Sulphate Tablets", "img": "/pharma-tablets/2.jpeg" },
+  { "title": "Nimesulide & Paracetamol Tablets", "img": "/pharma-tablets/1.jpeg" },
+  { "title": "Aceclofenac & Paracetamol IP Tablets", "img": "/pharma-tablets/3.jpeg" }
+];
 // export const sweetenerProducts = [
 //   { title: "Neo Sucralose Sweetener", img: "/products/sweetener1.png" },
 // ];
 
 // Legacy export for backward compatibility
 export const productCategories = {
+  "pharma-suspension": {
+    title: "Pharmaceutical Suspension",
+    description:
+      "High-quality oral suspensions formulated for effective and reliable therapeutic use across various healthcare needs.",
+    products: suspensionProducts,
+  },
+
+  "pharma-syrup": {
+    title: "Pharmaceutical Syrup",
+    description:
+      "A diverse range of premium pharmaceutical syrups crafted for effective respiratory, digestive, and general wellness care.",
+    products: syrupProducts,
+  },
+
+  "capsules": {
+    title: "Pharmaceutical Capsules",
+    description:
+      "Quality-assured gastro-resistant and sustained-release capsules designed for accurate dosage and optimal patient outcomes.",
+    products: capsulesProducts,
+  },
+
+  "pharma-tablets": {
+    title: "Pharmaceutical Tablets",
+    description:
+      "A comprehensive range of safe, effective, and clinically trusted tablets manufactured under strict quality standards.",
+    products: tabletsProducts,
+  },
+
+
   // "protein-powder": {
   //   title: "Protein Powder",
   //   description:
@@ -143,14 +183,14 @@ export const productCategories = {
   "pharma-suspension": {
     title: "Pharmaceutical Suspension",
     description:
-      "Pioneers in the industry, we offer Lycopene Multivitamins and Multiminerals Suspension...",
+  "Our Pharmaceutical Suspension range includes high-quality formulations such as Mefenamic Acid & Paracetamol, Fexofenadine HCl, Azithromycin, Aceclofenac & Paracetamol, Ferrous Ascorbate, and digestive/laxative suspensions. All products are manufactured under strict quality standards ensuring safety, stability, and effective therapeutic results.",
     products: suspensionProducts,
   },
 
   "pharma-syrup": {
     title: "Pharmaceutical Syrup",
     description:
-      "Our range includes Fungal Diastase And Pepsin Syrup, RECOVER - VZ, Digefast Pineapple flavour...",
+      "Our wide range includes Fungal Diastase & Pepsin Syrup, Recover-VZ, Digefast Pineapple Flavour, Urocital Syrup, Dextrometharphan Hydrobromide, and other high-quality syrups.",
     products: syrupProducts,
   },
 
@@ -169,8 +209,15 @@ export const productCategories = {
 
   "capsules": {
     title: "Pharmaceutical Capsules",
-    description: "Manufacturer of Multivitamin Tablets Capsules & Softgel Capsules.",
+    description: "Manufacturer of Multivitamin Capsules, Soft Gel Capsules, and high-quality pharma capsules, including Pantoprazole Gastro-resistant & Domperidone prolonged-release capsules.",
     products: capsulesProducts,
+  },
+
+  "pharma-tablets": {
+    title: "Pharmaceutical Tablets",
+    description:
+      "We offer a wide range of tablets including Aceclofenac, Paracetamol & Serratiopeptidase Tablets, Linezolid Tablets IP, Ferrous Ascorbate, Folic Acid & Zinc Sulphate Tablets, and more.",
+    products: tabletsProducts,
   },
 
   // "sweetener": {

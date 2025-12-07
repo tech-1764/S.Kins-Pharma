@@ -42,7 +42,9 @@ export default function Navbar() {
 
 
     return (
-        <div>
+        <div className="overflow: hidden;
+overflow-x: hidden;
+">
             {/* ===== TOP SECTION (not sticky) ===== */}
             <header className="w-full">
 
@@ -127,8 +129,8 @@ export default function Navbar() {
 
 
             {/* ===== MAIN NAV BAR (sticky) ===== */}
-            <div className="sticky top-0 left-0 w-full z-[9999]">
-                <nav className="bg-[#860000]/95 backdrop-blur-md text-gray-100 shadow-lg">                    <div className="container mx-auto flex items-center justify-around h-16 px-4">
+            <nav className="sticky top-0 left-0 z-[9999] bg-[#860000]/95 backdrop-blur-md text-gray-100 shadow-lg">
+                <div className="container mx-auto flex items-center justify-around h-16 px-4">
 
                     <div className="hidden md:flex gap-7">
 
@@ -165,7 +167,7 @@ export default function Navbar() {
 
                             <div className="absolute top-16 left-[-200px] w-[1050px] bg-white text-black shadow-xl hidden group-hover:flex p-8 z-70">
 
-                                <div className="grid grid-cols-3 gap-10 text-sm leading-6">
+                                <div className="grid grid-cols-4 gap-10 text-sm leading-6">
 
                                     {productsMenu.map((section, index) => (
                                         <div key={index} className="mb-6">
@@ -223,74 +225,73 @@ export default function Navbar() {
 
                 </div>
 
-                    {/* Mobile Menu */}
-                    {isOpen && (
-                        <div className="md:hidden bg-[#6E0000] py-4 px-4 space-y-4">
+                {/* Mobile Menu */}
+                {isOpen && (
+                    <div className="md:hidden bg-[#6E0000] py-4 px-4 space-y-4">
 
-                            {/* Home */}
-                            <Link
-                                href="/"
-                                className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                            >
-                                Home
-                            </Link>
+                        {/* Home */}
+                        <Link
+                            href="/"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Home
+                        </Link>
 
-                            {/* About Us */}
-                            <Link
-                                href="/about-us"
-                                className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                            >
-                                About Us
-                            </Link>
+                        {/* About Us */}
+                        <Link
+                            href="/about"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            About Us
+                        </Link>
 
-                            {/* Products & Services (Accordion Style) */}
-                            <details className="text-white">
-                                <summary className="cursor-pointer py-2 text-[16px] uppercase">
-                                    Products & Services
-                                </summary>
+                        {/* Products & Services (Accordion Style) */}
+                        <details className="text-white">
+                            <summary className="cursor-pointer py-2 text-[16px] uppercase">
+                                Products & Services
+                            </summary>
 
-                                <div className="mt-2 bg-[#7a0000] rounded-md p-3 space-y-2">
+                            <div className="mt-2 bg-[#7a0000] rounded-md p-3 space-y-2">
 
-                                    {productsMenu.map((section, index) => (
-                                        <div key={index}>
-                                            <p className="font-semibold text-[15px] mb-1">{section.title}</p>
+                                {productsMenu.map((section, index) => (
+                                    <div key={index}>
+                                        <p className="font-semibold text-[15px] mb-1">{section.title}</p>
 
-                                            <div className="pl-3 space-y-1">
-                                                {section.items.map((item, i) => (
-                                                    <p key={i} className="text-sm opacity-90">{item}</p>
-                                                ))}
-                                            </div>
-
-                                            {section.more && (
-                                                <p className="text-sm text-yellow-300 underline mt-1">...more</p>
-                                            )}
-
+                                        <div className="pl-3 space-y-1">
+                                            {section.items.map((item, i) => (
+                                                <p key={i} className="text-sm opacity-90">{item}</p>
+                                            ))}
                                         </div>
-                                    ))}
 
-                                </div>
-                            </details>
+                                        {section.more && (
+                                            <p className="text-sm text-yellow-300 underline mt-1">...more</p>
+                                        )}
 
-                            {/* Gallery */}
-                            <Link
-                                href="/gallery"
-                                className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                            >
-                                Gallery
-                            </Link>
+                                    </div>
+                                ))}
 
-                            {/* Contact */}
-                            <Link
-                                href="/contact"
-                                className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
-                            >
-                                Contact Us
-                            </Link>
+                            </div>
+                        </details>
 
-                        </div>
-                    )}
-                </nav>
-            </div>
+                        {/* Gallery */}
+                        <Link
+                            href="/gallery"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Gallery
+                        </Link>
+
+                        {/* Contact */}
+                        <Link
+                            href="/contact"
+                            className="block text-white py-2 border-b border-[#7a0000] text-[16px] uppercase"
+                        >
+                            Contact Us
+                        </Link>
+
+                    </div>
+                )}
+            </nav>
         </div>
     )
 }

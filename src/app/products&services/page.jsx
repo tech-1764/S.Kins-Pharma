@@ -13,6 +13,7 @@ import {
   // thirdPartyProducts,
   // franchiseProducts,
   capsulesProducts,
+  tabletsProducts
   // sweetenerProducts
 } from "@/data/productsData";
 import { useRouter } from "next/navigation";
@@ -33,48 +34,34 @@ export default function ProductsServices() {
     //     "Prominent & leading manufacturer from Nalagarh, we offer Junior Chocolate Protein Powder, ORS Liquid, Sr Protein Powder and more.",
     //   products: proteinProducts,
     // },
-    {
-      id: "pharma-suspension",
-      title: "Pharmaceutical Suspension",
-      desc:
-        "We offer Lycopene Multivitamins Suspension, Ferrous Ascorbate Suspension, Silymarin Lecithin with L-Ornithine and more.",
-      products: suspensionProducts,
-    },
-    {
-      id: "pharma-syrup",
-      title: "Pharmaceutical Syrup",
-      desc:
-        "Our range includes Fungal Diastase & Pepsin Syrup, Recover-VZ, Digefast Pineapple Flavour and Urocital Syrup.",
-      products: syrupProducts,
-    },
-    // {
-    //   id: "third-party",
-    //   title: "Third Party Manufacturing",
-    //   desc:
-    //     "Bestowed with vast knowledge, we offer prompt and reliable Third Party Pharma Manufacturing services.",
-    //   products: thirdPartyProducts,
-    // },
-    // {
-    //   id: "pcd-franchise",
-    //   title: "PCD Pharma Franchise",
-    //   desc:
-    //     "Emerged as a reputed provider, we render qualitative PCD Pharma Franchise services across India.",
-    //   products: franchiseProducts,
-    // },
-    {
-      id: "capsules",
-      title: "Pharmaceutical Capsules",
-      desc:
-        "Manufacturer of Multivitamin Capsules, Soft Gel Capsules and high-quality pharma capsules.",
-      products: capsulesProducts,
-    },
-    // {
-    //   id: "sweetener",
-    //   title: "Artificial Sweetener",
-    //   desc:
-    //     "We offer high-quality Neo Sucralose Artificial Sweetener.",
-    //   products: sweetenerProducts,
-    // },
+ {
+    title: "Pharmaceutical Suspension",
+    desc:
+      "High-quality oral suspensions formulated for effective and reliable therapeutic use across various healthcare needs.",
+    products: suspensionProducts,
+  },
+ {
+    title: "Pharmaceutical Syrup",
+    desc:
+      "A diverse range of premium pharmaceutical syrups crafted for effective respiratory, digestive, and general wellness care.",
+    products: syrupProducts,
+  },
+
+ {
+    title: "Pharmaceutical Capsules",
+    desc:
+      "Quality-assured gastro-resistant and sustained-release capsules designed for accurate dosage and optimal patient outcomes.",
+    products: capsulesProducts,
+  },
+
+  {
+    title: "Pharmaceutical Tablets",
+    desc:
+      "A comprehensive range of safe, effective, and clinically trusted tablets manufactured under strict quality standards.",
+    products: tabletsProducts,
+  },
+
+
   ];
 
   return (
