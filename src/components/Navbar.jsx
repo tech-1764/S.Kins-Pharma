@@ -106,7 +106,7 @@ export default function Navbar() {
                             <div className="mt-3 bg-white rounded-xl border shadow max-h-64 overflow-y-auto">
                                 {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product, idx) => (
-                                        <Link href="/products&services">
+                                        <Link key={idx} href="/products&services">
                                             <div
                                                 key={idx}
                                                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b last:border-none"
@@ -124,10 +124,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </header>
-
-
-
-
 
 
             {/* ===== MAIN NAV BAR (sticky) ===== */}

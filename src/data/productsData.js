@@ -179,3 +179,12 @@ export const productCategories = {
   //   products: sweetenerProducts,
   // },
 };
+
+// Individual product arrays for each category
+// export const proteinProducts = [
+//   { title: "Junior Chocolate Protein Powder", img: "/products/pro1.png" },
+//   { title: "Energy Drink Cum ORS Liquid", img: "/products/pro2.png" },
+//   { title: "Chocolate Protein Powder", img: "/products/pro3.png" },
+//   { title: "Sr Protein Powder", img: "/products/pro4.png" },
+//   { title: "Strawberry Flavour Protein Powder", img: "/products/pro5.png" },
+// ];

@@ -601,3 +601,6 @@ export const categoryDescriptions = {
 // pcd-franchise
 // capsules
 // sweetener
+
+// /data/detailedProducts.js
+
