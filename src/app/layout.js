@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +18,9 @@ export const viewport = {
   maximumScale: 1,
 };
 
-
 export const metadata = {
-  metadataBase: new URL("https://s-kins-pharma.vercel.app"), 
-  
+  metadataBase: new URL("https://s-kins-pharma.vercel.app"),
+
   title: "S. Kins Pharma | Top Pharmaceutical Manufacturer in India",
   description:
     "S. Kins Pharma is a leading pharmaceutical company providing high-quality pharma products including syrups, suspensions, capsules, protein powders, and third-party manufacturing services.",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "S. Kins Pharma",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "S. Kins Pharma Manufacturing Unit",
@@ -65,9 +65,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DY2PYJKGNR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-DY2PYJKGNR', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AnalyticsTracker />
         {children}
       </body>
     </html>
