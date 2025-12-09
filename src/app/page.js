@@ -82,7 +82,7 @@ export default function Home() {
             </p>
 
             <Link
-              href="/products-services"
+              href="/products&services"
               className="inline-flex items-center bg-white text-[#800000] px-6 py-3 rounded-full font-semibold hover:bg-[#F8EDED] transition-all"
             >
               Explore Products <ArrowRight className="ml-2 w-4 h-4" />
@@ -135,7 +135,7 @@ export default function Home() {
             </p>
 
             <Link
-              href="/products-services"
+              href="/products&services"
               className="inline-block mt-4 bg-[#800000] text-white px-7 py-2 rounded-full shadow-md hover:bg-[#660000] transition-all"
             >
               Read More <ArrowRight className="ml-2 w-4 h-4" />
@@ -358,7 +358,7 @@ export default function Home() {
                   </ul>
 
                   {/* View More Button */}
-                  <Link href={`/products-services?cat=${slug}`}>
+                  <Link href={`/products&services?cat=${slug}`}>
                     <button className="mx-4 mb-4 mt-3 bg-[#800000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#660000] transition w-[80%]">
                       View More
                     </button>
@@ -680,7 +680,7 @@ export default function Home() {
 //             </p>
 
 //             <Link
-//               href="/products-services"
+//               href="/products&services"
 //               className="inline-block mt-4 bg-[#800000] text-white px-7 py-2 rounded-full shadow-md hover:bg-[#660000] transition-all"
 //             >
 //               Read More <ArrowRight className="ml-2 w-4 h-4" />
@@ -903,7 +903,7 @@ export default function Home() {
 //                   </ul>
 
 //                   {/* View More Button */}
-//                   <Link href={`/products-services?cat=${slug}`}>
+//                   <Link href={`/products&services?cat=${slug}`}>
 //                     <button className="mx-4 mb-4 mt-3 bg-[#800000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#660000] transition w-[80%]">
 //                       View More
 //                     </button>

@@ -33,7 +33,7 @@ export default function Navbar() {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about-us" },
-        { name: "Products & Services", href: "/products-services" },
+        { name: "Products & Services", href: "/products&services" },
         { name: "Gallery", href: "/gallery" },
         { name: "Contact Us", href: "/contact" },
     ];
@@ -108,7 +108,7 @@ overflow-x: hidden;
                             <div className="mt-3 bg-white rounded-xl border shadow max-h-64 overflow-y-auto">
                                 {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product, idx) => (
-                                        <Link key={idx} href="/products-services">
+                                        <Link key={idx} href="/products&services">
                                             <div
                                                 key={idx}
                                                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b last:border-none"
@@ -160,7 +160,7 @@ overflow-x: hidden;
 
                         <div className="relative group">
                             <Link
-                                href="/products-services"
+                                href="/products&services"
                                 className="hover:bg-[#6E0000] transition-all h-16 flex px-5 items-center text-[15px] font-bold uppercase">
                                 Products & Services
                             </Link>
@@ -176,7 +176,7 @@ overflow-x: hidden;
 
                                             <div className="flex flex-col gap-2">
                                                 {section.items.map((item, i) => (
-                                                    <Link key={i} href="/products-services" className="hover:text-[#860000]">
+                                                    <Link key={i} href="/products&services" className="hover:text-[#860000]">
                                                         {item}
                                                     </Link>
                                                 ))}
@@ -184,7 +184,7 @@ overflow-x: hidden;
 
                                             {section.more && (
                                                 <Link
-                                                    href="/products-services"
+                                                    href="/products&services"
                                                     className="block mt-1 text-[#860000] underline"
                                                 >
                                                     ...more

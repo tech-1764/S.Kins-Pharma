@@ -16,7 +16,7 @@ export default function HeroSection() {
             offering quality formulations with innovation and care.
           </p>
           <Link
-            href="/products"
+            href="/products&services"
             className="inline-flex items-center bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition-all"
           >
             Explore Products <ArrowRight className="ml-2 w-4 h-4" />
